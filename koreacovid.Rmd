@@ -54,6 +54,13 @@ The percentage of males with the virus is less than females but the rate of male
 
   
 ## Numerical results
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+Female alive is 56 percent and males alive is 44 percent. 
+Females dead is 36 percet and males is 64 percent.  
 
 
 ## Inferential results 
