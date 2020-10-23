@@ -24,8 +24,8 @@ state of a patient must be died or alive - we adjust that as well
   
 # Question 1 - Is dying independent of sex
 
-
-
+$H_0$ There is a no difference in females dying compared to males dying.   
+$H_A$ There is difference in females dying compared to males dying.    
 
 Table of patients:
 ```{r}
@@ -60,13 +60,19 @@ rowPerc(table1)
 colPerc(table1)
 ```
 Female alive is 56 percent and males alive is 44 percent. 
-Females dead is 36 percet and males is 64 percent.  
+Females dead is 36 percent and males is 64 percent.  
 
 
 ## Inferential results 
-
-
-
-
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+The odds of dying if you're a male is 44/1411   
+The odds of dying if you're a female is 25/1831   
+The odds ratio is (44/1411)/(25/1831).   
+The odds of dying is 2.3 to 1. 
+   
 ## Conclusions
-
+The P value is 0.001 The chance of getting results that we just obtained if the null hypothesis is true. Based on the chances being so low, we reject the null hypothesis.
